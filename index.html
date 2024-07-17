@@ -56,6 +56,8 @@
             border: 1px solid #ddd;
             border-radius: 4px;
             transition: border-color 0.3s;
+            min-width: 60px;
+            max-width: 100px;
         }
         .input-fields input:focus {
             outline: none;
@@ -107,6 +109,8 @@
         }
         .small-input {
             width: 40%;
+            min-width: 60px;
+            max-width: 100px;
         }
     </style>
 </head>
@@ -124,10 +128,10 @@
                         <input type="number" id="value1" class="small-input" required>
                         <label for="price1" style="margin-left: 10px;">価格 (円): </label>
                         <input type="number" id="price1" class="small-input" required>
+                        <span class="result" id="result1"></span>
                     </div>
                 </div>
                 <div class="actions">
-                    <span class="result" id="result1"></span>
                     <button class="remove-button" onclick="removeInputGroup(1)">削除</button>
                 </div>
             </div>
@@ -222,10 +226,10 @@
                         <input type="number" id="value${inputGroupCount}" class="small-input" required>
                         <label for="price${inputGroupCount}" style="margin-left: 10px;">価格 (円): </label>
                         <input type="number" id="price${inputGroupCount}" class="small-input" required>
+                        <span class="result" id="result${inputGroupCount}"></span>
                     </div>
                 </div>
                 <div class="actions">
-                    <span class="result" id="result${inputGroupCount}"></span>
                     <button class="remove-button" onclick="removeInputGroup(${inputGroupCount})">削除</button>
                 </div>
             `;
