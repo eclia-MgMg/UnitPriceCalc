@@ -45,8 +45,8 @@ h1 {
 }
 
 .input-fields label {
-    flex: 0 0 100px;
-    margin-right: 10px;
+    flex: 0 0 80px; /* ラベルの幅を調整 */
+    margin-right: 1px; /* 余白を削減 */
 }
 
 .input-fields input {
@@ -57,12 +57,21 @@ h1 {
     border-radius: 4px;
     transition: border-color 0.3s;
     min-width: 60px;
-    max-width: 100px;
+    margin-right: 1px; /* 余白を削減 */
+}
+
+.input-fields input:last-child {
+    margin-right: 0; /* 最後の入力フィールドのマージンを無くす */
 }
 
 .input-fields input:focus {
     outline: none;
     border-color: #3498db;
+}
+
+.input-fields .full-width-input {
+    width: 100%;
+    max-width: none; /* 横幅に併せて伸縮する */
 }
 
 .actions {
@@ -120,5 +129,5 @@ h1 {
 .small-input {
     width: 40%;
     min-width: 60px;
-    max-width: 100px;
+    margin-right: 1px; /* 余白を削減 */
 }
