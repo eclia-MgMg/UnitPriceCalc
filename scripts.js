@@ -73,18 +73,18 @@ function addInputGroup() {
     newInputGroup.innerHTML = `
         <div class="input-fields">
             <div class="row">
-                <input type="text" id="label${inputGroupCount}" placeholder="商品名">
+                <input type="text" id="label${inputGroupCount}" class="full-width-input" placeholder="商品名">
             </div>
             <div class="row">
                 <label for="value${inputGroupCount}">容量 : </label>
                 <input type="number" id="value${inputGroupCount}" class="small-input" required>
-                <label for="price${inputGroupCount}" style="margin-left: 10px;">価格 (円): </label>
+                <label for="price${inputGroupCount}" style="margin-left: 1px;">価格 (円): </label>
                 <input type="number" id="price${inputGroupCount}" class="small-input" required>
-                <span class="result" id="result${inputGroupCount}"></span>
             </div>
         </div>
         <div class="actions">
             <button class="remove-button" onclick="removeInputGroup(${inputGroupCount})">削除</button>
+            <span class="result" id="result${inputGroupCount}"></span>
         </div>
     `;
     inputContainer.appendChild(newInputGroup);
