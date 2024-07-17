@@ -45,8 +45,8 @@ h1 {
 }
 
 .input-fields label {
-    flex: 0 0 100px;
-    margin-right: 1px; /* 調整済み */
+    flex: 0 0 80px; /* ラベルの幅を調整 */
+    margin-right: 1px; /* 余白を削減 */
 }
 
 .input-fields input {
@@ -57,8 +57,7 @@ h1 {
     border-radius: 4px;
     transition: border-color 0.3s;
     min-width: 60px;
-    max-width: 100px;
-    margin-right: 1px; /* 調整済み */
+    margin-right: 1px; /* 余白を削減 */
 }
 
 .input-fields input:last-child {
@@ -130,6 +129,5 @@ h1 {
 .small-input {
     width: 40%;
     min-width: 60px;
-    max-width: 100px;
-    margin-right: 1px; /* 調整済み */
+    margin-right: 1px; /* 余白を削減 */
 }
