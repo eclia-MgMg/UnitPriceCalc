@@ -6,13 +6,15 @@ function calculateAllUnitPrices() {
 
     for (let i = 1; i <= inputGroupCount; i++) {
         const value = document.getElementById(`value${i}`);
+        const setCount = document.getElementById(`setCount${i}`);
         const price = document.getElementById(`price${i}`);
         const result = document.getElementById(`result${i}`);
         const inputGroup = document.getElementById(`group${i}`);
 
-        if (value && price && result && inputGroup) {
-            if (value.value && price.value) {
-                const unitPrice = price.value / value.value;
+        if (value && setCount && price && result && inputGroup) {
+            if (value.value && setCount.value && price.value) {
+                const totalValue = value.value * setCount.value;
+                const unitPrice = price.value / totalValue;
                 result.innerText = `単価: ${unitPrice.toFixed(2)}円/単位`;
 
                 if (unitPrice < lowestUnitPrice) {
@@ -38,13 +40,15 @@ function calculateAllValuePerYen() {
 
     for (let i = 1; i <= inputGroupCount; i++) {
         const value = document.getElementById(`value${i}`);
+        const setCount = document.getElementById(`setCount${i}`);
         const price = document.getElementById(`price${i}`);
         const result = document.getElementById(`result${i}`);
         const inputGroup = document.getElementById(`group${i}`);
 
-        if (value && price && result && inputGroup) {
-            if (value.value && price.value) {
-                const valuePerYen = value.value / price.value;
+        if (value && setCount && price && result && inputGroup) {
+            if (value.value && setCount.value && price.value) {
+                const totalValue = value.value * setCount.value;
+                const valuePerYen = totalValue / price.value;
                 result.innerText = `1円あたり: ${valuePerYen.toFixed(2)}単位`;
 
                 if (valuePerYen > highestValuePerYen) {
@@ -78,6 +82,8 @@ function addInputGroup() {
             <div class="row">
                 <label for="value${inputGroupCount}">容量 :</label>
                 <input type="number" id="value${inputGroupCount}" class="small-input" required>
+                <span>x</span>
+                <input type="number" id="setCount${inputGroupCount}" class="small-input" value="1" required>
             </div>
             <div class="row">
                 <label for="price${inputGroupCount}">価格 (円):</label>
