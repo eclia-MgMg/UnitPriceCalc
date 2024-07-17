@@ -84,6 +84,7 @@ h1 {
     font-weight: bold;
     color: #2c3e50;
     text-align: right;
+    margin-left: 10px; /* 削除ボタンとの間の余白を調整 */
 }
 
 .highlight {
