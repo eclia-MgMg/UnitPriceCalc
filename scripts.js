@@ -96,6 +96,12 @@ function addInputGroup() {
         </div>
     `;
     inputContainer.appendChild(newInputGroup);
+
+    // 新しいグループに対してEnterキー移動のイベントを追加
+    addEnterKeyListener(`label${inputGroupCount}`, `value${inputGroupCount}`);
+    addEnterKeyListener(`value${inputGroupCount}`, `setCount${inputGroupCount}`);
+    addEnterKeyListener(`setCount${inputGroupCount}`, `price${inputGroupCount}`);
+    addEnterKeyListener(`price${inputGroupCount}`, `label${inputGroupCount + 1}`);
 }
 
 function removeInputGroup(groupNumber) {
@@ -104,3 +110,25 @@ function removeInputGroup(groupNumber) {
         inputGroup.remove();
     }
 }
+
+function addEnterKeyListener(currentId, nextId) {
+    const currentInput = document.getElementById(currentId);
+    const nextInput = document.getElementById(nextId);
+
+    if (currentInput && nextInput) {
+        currentInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                nextInput.focus();
+                nextInput.select(); // フォーカスした時にテキストを選択状態にする
+            }
+        });
+    }
+}
+
+// 初期入力グループのEnterキー移動のイベントを追加
+document.addEventListener('DOMContentLoaded', () => {
+    addEnterKeyListener('label1', 'value1');
+    addEnterKeyListener('value1', 'setCount1');
+    addEnterKeyListener('setCount1', 'price1');
+});
