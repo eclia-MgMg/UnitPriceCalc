@@ -81,13 +81,13 @@ function addInputGroup() {
             </div>
             <div class="row">
                 <label for="value${inputGroupCount}">容量 :</label>
-                <input type="number" id="value${inputGroupCount}" class="small-input" required>
+                <input type="number" id="value${inputGroupCount}" class="small-input" inputmode="numeric" autocomplete="off" required>
                 <span>x</span>
-                <input type="number" id="setCount${inputGroupCount}" class="small-input" value="1" required>
+                <input type="number" id="setCount${inputGroupCount}" class="small-input" value="1" inputmode="numeric" autocomplete="off" required>
             </div>
             <div class="row">
                 <label for="price${inputGroupCount}">価格 (円):</label>
-                <input type="number" id="price${inputGroupCount}" class="small-input" required>
+                <input type="number" id="price${inputGroupCount}" class="small-input" inputmode="numeric" autocomplete="off" required>
             </div>
         </div>
         <div class="actions">
