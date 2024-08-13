@@ -81,7 +81,7 @@ function addInputGroup() {
             </div>
             <div class="row">
                 <label for="value${inputGroupCount}">容量 :</label>
-                <input type="number" id="value${inputGroupCount}" class="small-input" inputmode="numeric" autocomplete="off" required>
+                <input type="number" id="value${inputGroupCount}" class="small-input" inputmode="decimal" step="any" autocomplete="off" required>
                 <span>x</span>
                 <input type="number" id="setCount${inputGroupCount}" class="small-input" value="1" inputmode="numeric" autocomplete="off" required>
             </div>
